@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Movies', {
@@ -6,49 +5,49 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
-      title: {
-        type: Sequelize.STRING
+      Title: {
+        type: Sequelize.STRING,
       },
-      year: {
-        type: Sequelize.INTEGER
+      Year: {
+        type: Sequelize.STRING,
       },
-      rated: {
-        type: Sequelize.STRING
+      Rated: {
+        type: Sequelize.STRING,
       },
-      released: {
-        type: Sequelize.STRING
+      Released: {
+        type: Sequelize.STRING,
       },
-      runtime: {
-        type: Sequelize.STRING
+      Runtime: {
+        type: Sequelize.STRING,
       },
-      genre: {
-        type: Sequelize.STRING
+      Genre: {
+        type: Sequelize.STRING,
       },
-      director: {
-        type: Sequelize.STRING
+      Director: {
+        type: Sequelize.STRING,
       },
-      plot: {
-        type: Sequelize.STRING(2500)
+      Plot: {
+        type: Sequelize.STRING(2500),
       },
-      poster: {
-        type: Sequelize.STRING
+      Poster: {
+        type: Sequelize.STRING,
       },
-      imdb: {
-        type: Sequelize.STRING
+      Imdb: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Movies');
-  }
+  },
 };

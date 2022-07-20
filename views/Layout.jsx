@@ -29,7 +29,7 @@ function Layout({ title, children, user }) {
                 {user ? (
                   <>
                     <li className="nav-item">
-                      <a className="nav-link" href="/auth/logout">{user.name}</a>
+                      <a className="nav-link" href={`/${user.login}`}>{user.name}</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="/auth/logout">Выйти</a>

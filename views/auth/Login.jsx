@@ -10,9 +10,9 @@ module.exports = function LogUser() {
         <input
           id="inputLogMail"
           type="text"
-          name="email"
+          name="login"
           tabIndex="2"
-          placeholder="Email"
+          placeholder="login"
           required
         />
 

@@ -2,11 +2,10 @@ const express = require('express');
 
 const route = express.Router();
 
-const render = require('../lib/render');
-const Index = require('../views/Index');
+const { usersController, personalFavorites } = require('../controllers/usersController');
 
-route.get('/', (req, res) => {
-  res.redirect('/search');
-});
+route.get('/', usersController);
+
+route.get('/:login', personalFavorites);
 
 module.exports = route;

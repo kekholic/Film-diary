@@ -22,3 +22,68 @@
     width: 1170px;
   }
 }
+
+.cardText {
+  margin-left: 15px;
+  padding-left: 15px;
+}
+
+.cardImage img {
+  margin: 0px 15px 0px 15px;
+}
+
+.card-title {
+  text-align: center;
+  margin: 10px;
+}
+
+.cardManual {
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  right: 2%;
+  bottom: 2%;
+}
+
+.buttonGroup {
+  margin: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.pull-right {
+  margin: 5px;
+}
+
+.card img {
+  max-height: 250px;
+  max-width: 180px;
+}
+
+.cardManual img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.cardCustom {
+  max-width: 180px;
+  margin: 10px;
+}
+
+.cardCustom:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.allFilms {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.allFilmsPersonal {
+  display: flex;
+  flex-wrap: wrap;
+}
