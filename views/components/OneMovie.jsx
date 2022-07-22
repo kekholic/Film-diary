@@ -72,7 +72,7 @@ module.exports = function MoviePreviewList({ movie, user }) {
         </div>
 
       </div>
-      <div className="pull-right buttonGroup ">
+      <div className="pull-right buttonGroup " data-dbid={movie.id}>
         <button type="button" className="btn btn-success pull-right">Add to favorite</button>
         <button type="button" className="btn btn-warning pull-right">Skip</button>
       </div>

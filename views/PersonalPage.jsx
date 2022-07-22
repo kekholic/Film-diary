@@ -10,7 +10,7 @@ module.exports = function PersonalPage({ user, movies }) {
       <h2>My favorites:</h2>
       <div className="allFilmsPersonal" id="allFilmsPersonal">
         {
-          movies.map((movie) => <MoviePreviewItem movie={movie} key={movie.id} user={user} key={movies.id} />)
+          movies.map((movie) => <MoviePreviewItem movie={movie} key={movie.id} user={user} />)
         }
 
       </div>

@@ -10,7 +10,8 @@ const LoginForm = require('../views/auth/Login');
 const { failAuth } = require('../middlewares/auth');
 
 exports.getRegistrationForm = (req, res) => {
-  render(RegisterForm, null, res);
+  console.log('registration');
+  return render(RegisterForm, null, res);
 };
 
 exports.getLoginForm = (req, res) => {
@@ -61,6 +62,7 @@ exports.logout = (req, res) => {
       failAuth(res, 'Произошла ошибка. Повторите попытку');
     }
     res.clearCookie('sid');
+
     return res.redirect('/');
   });
 };

@@ -28,13 +28,28 @@ module.exports = {
       Director: {
         type: Sequelize.STRING,
       },
+      Type: {
+        type: Sequelize.STRING,
+      },
+      Awards: {
+        type: Sequelize.STRING,
+      },
+      Language: {
+        type: Sequelize.STRING,
+      },
+      Writer: {
+        type: Sequelize.STRING,
+      },
+      Actors: {
+        type: Sequelize.STRING,
+      },
       Plot: {
         type: Sequelize.STRING(2500),
       },
       Poster: {
         type: Sequelize.STRING,
       },
-      Imdb: {
+      imdbRating: {
         type: Sequelize.STRING,
       },
       createdAt: {

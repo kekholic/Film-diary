@@ -11,7 +11,7 @@ module.exports = function LogUser() {
           id="inputLogMail"
           type="text"
           name="login"
-          tabIndex="2"
+          tabIndex="1"
           placeholder="login"
           required
         />

@@ -1,5 +1,6 @@
 exports.isValid = (req, res, next) => {
   const { name, login, password } = req.body;
+  console.log('isValid');
   // const isValidLogin = login.match(/^[a-z0-9]+([-_]?[a-z0-9]+){2,}$/i);
   // if (!isValidLogin) return res.status(401).json({ message: 'Недопустимый логин. Логин должен содержать более двух символов' });
   // const isValidPassword = password.match(/^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$/);

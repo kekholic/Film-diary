@@ -12,7 +12,7 @@ const dbCheck = require('./db/dbCheck');
 const sessionConfig = require('./lib/sessionConfig');
 
 // импорт роутов
-const indexRoutes = require('./routes/indexRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 const authRoutes = require('./routes/authRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 const searchRoutes = require('./routes/searchRoutes');
@@ -30,10 +30,10 @@ app.use(session(sessionConfig));
 
 // роутеры
 app.use('/search', searchRoutes);
-app.use('/', indexRoutes);
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 app.use('/movies', movieRouter);
+app.use('/', usersRoutes);
 app.use('*', errorRoutes);
 
 const PORT = process.env.PORT || 3100;
