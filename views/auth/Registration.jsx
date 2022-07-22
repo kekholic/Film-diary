@@ -25,8 +25,6 @@ module.exports = function RegUser() {
           required
         />
 
-
-
         <input
           id="inputRegPassword"
           name="password"

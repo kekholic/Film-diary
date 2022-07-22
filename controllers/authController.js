@@ -39,6 +39,7 @@ exports.registration = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { login, password } = req.body;
+  console.log(req.body);
   try {
     const user = await User.findOne({ where: { login } });
     if (!user) return failAuth(res, 'Неверное имя или пароль!');
