@@ -64,7 +64,7 @@ module.exports = function LogUser() {
                     Don't have an account?
                     {' '}
                     <a
-                      href="#!"
+                      href="/auth/registration"
                       className="link-danger"
                     >
                       Register
