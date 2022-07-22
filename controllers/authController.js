@@ -10,7 +10,8 @@ const LoginForm = require('../views/auth/Login');
 const { failAuth } = require('../middlewares/auth');
 
 exports.getRegistrationForm = (req, res) => {
-  render(RegisterForm, null, res);
+  console.log('registration');
+  return render(RegisterForm, null, res);
 };
 
 exports.getLoginForm = (req, res) => {
@@ -18,18 +19,18 @@ exports.getLoginForm = (req, res) => {
 };
 
 exports.registration = async (req, res) => {
-  const { email, name, password } = req.body;
+  const { login, name, password } = req.body;
   try {
-    const candidate = await User.findOne({ where: { email } });
+    const candidate = await User.findOne({ where: { login } });
     if (candidate) return res.status(401).json({ message: 'Имя пользователя занято' });
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
       name,
-      email,
+      login,
       password: hashedPassword,
     });
 
-    return res.redirect('/');
+    return res.redirect('/auth/login');
   } catch (error) {
     console.log('error: ', error.message);
     failAuth(res, 'Ошибка регистрации. Повторите попытку.');
@@ -37,15 +38,16 @@ exports.registration = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { email, password } = req.body;
+  const { login, password } = req.body;
+  console.log(req.body);
   try {
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { login } });
     if (!user) return failAuth(res, 'Неверное имя или пароль!');
 
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) return failAuth(res, 'Неверное имя или пароль!!');
 
-    req.session.user = { id: user.id, email: user.email, name: user.name };
+    req.session.user = { id: user.id, login: user.login, name: user.name };
 
     return res.redirect('/');
   } catch (error) {
@@ -61,6 +63,7 @@ exports.logout = (req, res) => {
       failAuth(res, 'Произошла ошибка. Повторите попытку');
     }
     res.clearCookie('sid');
+
     return res.redirect('/');
   });
 };

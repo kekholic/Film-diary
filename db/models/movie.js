@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Movie extends Model {
     /**
@@ -14,16 +14,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Movie.init({
-    title: DataTypes.STRING,
-    year: DataTypes.INTEGER,
-    rated: DataTypes.STRING,
-    released: DataTypes.STRING,
-    runtime: DataTypes.STRING,
-    genre: DataTypes.STRING,
-    director: DataTypes.STRING,
-    plot: DataTypes.STRING(2500),
-    poster: DataTypes.STRING,
-    imdb: DataTypes.STRING
+    Title: DataTypes.STRING,
+    Year: DataTypes.STRING,
+    Rated: DataTypes.STRING,
+    Released: DataTypes.STRING,
+    Runtime: DataTypes.STRING,
+    Genre: DataTypes.STRING,
+    Director: DataTypes.STRING,
+    Plot: DataTypes.STRING(2500),
+    Type: DataTypes.STRING,
+    Awards: DataTypes.STRING,
+    Language: DataTypes.STRING,
+    Writer: DataTypes.STRING,
+    Actors: DataTypes.STRING,
+    Poster: DataTypes.STRING,
+    imdbRating: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Movie',

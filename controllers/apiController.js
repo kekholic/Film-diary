@@ -10,3 +10,10 @@ exports.apiController = async (req, res) => {
   const result = await response.json();
   res.json(result);
 };
+
+exports.apiControllerOneMovie = async (req, res) => {
+  const { imdbID } = req.params;
+  const response = await fetch(`http://www.omdbapi.com/?i=${imdbID}&plot=full&apikey=${APIKEY}`);
+  const result = await response.json();
+  res.json(result);
+};

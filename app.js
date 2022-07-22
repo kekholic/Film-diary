@@ -12,11 +12,12 @@ const dbCheck = require('./db/dbCheck');
 const sessionConfig = require('./lib/sessionConfig');
 
 // импорт роутов
-const indexRoutes = require('./routes/indexRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 const authRoutes = require('./routes/authRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 const errorRoutes = require('./routes/errorRoutes');
+const movieRouter = require('./routes/movieRoutes');
 
 // вызов функции проверки соединения c базоый данных
 dbCheck();
@@ -28,10 +29,11 @@ app.use(express.json());
 app.use(session(sessionConfig));
 
 // роутеры
-app.use('/', indexRoutes);
+app.use('/search', searchRoutes);
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
-app.use('/search', searchRoutes);
+app.use('/movies', movieRouter);
+app.use('/', usersRoutes);
 app.use('*', errorRoutes);
 
 const PORT = process.env.PORT || 3100;

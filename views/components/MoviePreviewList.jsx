@@ -7,7 +7,7 @@ module.exports = function MoviePreviewList({ movies, user }) {
 
     <>
       <h2>Результат поиска:</h2>
-      <div id="allTweets">
+      <div className="allFilms" id="allFilms">
         {
           movies.map((movie) => <MoviePreviewItem movie={movie} key={movie.id} user={user} key={movies.id} />)
         }

@@ -10,9 +10,9 @@ module.exports = function RegUser() {
         <input
           id="inputRegMail"
           type="text"
-          name="email"
+          name="login"
           tabIndex="2"
-          placeholder="Email"
+          placeholder="login"
           required
         />
 
@@ -24,8 +24,6 @@ module.exports = function RegUser() {
           placeholder="Имя"
           required
         />
-
-
 
         <input
           id="inputRegPassword"
