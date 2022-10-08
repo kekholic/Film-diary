@@ -14,6 +14,5 @@ This game was build using next technologies:
 
 # Installation
 
-1. npm i
-2. npm start
-3. enjoy application
+1. `npm i`
+2. `npm start`
